@@ -5,11 +5,11 @@ const cors = require('cors');
 const app = express();
 // Cross Platform Compatibility
 app.use(cors());
-const corsOptions = {
-    origin: 'https://desol-client.vercel.app',
-    credentials: true,            //access-control-allow-credentials:true
-    optionSuccessStatus: 200
-}
+// const corsOptions = {
+//     origin: 'https://desol-client.vercel.app',
+//     credentials: true,            //access-control-allow-credentials:true
+//     optionSuccessStatus: 200
+// }
 app.use(cors(corsOptions));
 // body-parser
 app.use(express.json());
