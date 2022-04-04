@@ -4,13 +4,17 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const app = express();
 // Cross Platform Compatibility
-// app.use(cors());
-const corsOptions = {
-    origin: '*',
-    credentials: true,            //access-control-allow-credentials:true
-    optionSuccessStatus: 200
-}
-app.use(cors(corsOptions));
+app.use(cors());
+//set headers
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 // body-parser
 app.use(express.json());
 // setting routes
