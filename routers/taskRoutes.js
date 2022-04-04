@@ -2,10 +2,10 @@ const route = require('express').Router();
 const taskController = require('../controllers/taskController');
 const path =  require('path')
 const multer = require('multer');
-const UPLOAD_FILES_DIR = "./uploads/";
+const UPLOAD_FILES_DIR = "./uploads/task";
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, __dirname+'/uploads/');
+    cb(null, UPLOAD_FILES_DIR);
   },
 // in case you want to change the names of your files)
   filename(req, file = {}, cb) {
