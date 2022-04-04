@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const app = express();
 // Cross Platform Compatibility
-app.use(cors());
+// app.use(cors());
 const corsOptions = {
     origin: 'https://desol-client.vercel.app/',
     credentials: true,            //access-control-allow-credentials:true
